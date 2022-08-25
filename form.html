@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+     <link rel="stylesheet" href="./dojo-release-1.17.3/dijit/themes/claro/claro.css">
+
+     <script>dojoConfig = { async: true, parseOnLoad: true }</script>
+    <script src='./dojo-release-1.17.3/dojo/dojo.js'></script>
+
+    <script type="text/javascript" src="./js/form.js"></script> 
+</head>
+
+<body class="claro" onload="formulario();" style="width: 90%; background:brown; height: auto;">
+
+    <div style="width: 90%; background:aquamarine; height: auto;">
+    <h4>Register Client</h4><br>
+
+    <div data-dojo-type="dijit/form/Form" id="myForm" data-dojo-id="myForm" encType="multipart/form-data" action=""
+        method="">
+
+        <table style="border: 1px solid #9f9f9f;" cellspacing="10">
+            <tr>
+                <td>
+                    <label for="first">Name:</label>
+                </td>
+                <td>
+                    <input data-dojo-type="dijit/form/ValidationTextBox" id="first" name="first" data-dojo-props="
+                    promptMessage:'Enter Your Name: [A-Z] Min 3, Max 15 characters',
+                    regExp: '.[a-z, A-Z]{2,14}$',
+                    required: true,
+                    placeHolder:'Your First Name',
+                    invalidMessage: 'First Name Required, [Aa-Zz] !'" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="last">Last Name:</label>
+                </td>
+                <td>
+                    <input data-dojo-type="dijit/form/ValidationTextBox" id="last" name="last" data-dojo-props="
+                    promptMessage:'Enter Your Last Name: [A-Z] Min 3, Max 15 characters',
+                    regExp: '.[a-z, A-Z]{2,14}$',
+                    required: true,
+                    placeHolder:'Your Last Name',
+                    invalidMessage: 'Last Name Required, [Aa-Zz] !'" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="phone">Phone:</label>
+                </td>
+                <td>
+                    <input data-dojo-type="dijit/form/ValidationTextBox" id="phone" name="phone" data-dojo-props="
+                    promptMessage:'Enter Your Phone: Min 8, Max 14 numbers',
+                    regExp: '.[0-9]{7,13}$',
+                    required: true,
+                    placeHolder:'Your Phone',
+                    invalidMessage: 'Phone Required, Use Numbers!'" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="email">Email:</label>
+                </td>
+                <td>
+                    <input data-dojo-type="dijit/form/ValidationTextBox" id="email" name="email" data-dojo-props="
+                    promptMessage:'Enter Your Email: Use format user@email.com',
+                    validator: dojox.validate.isEmailAddress,
+                    required: true,
+                    placeHolder:'Your Email',
+                    invalidMessage: 'Email Required, [user@email.com] !'" />
+                </td>
+            </tr>
+        </table>
+
+        <div data-dojo-type="dijit/form/Button" id="submit" type="submit"></div>
+        <div data-dojo-type="dijit/form/Button" id="reset"></div>
+
+    </div>
+</div>
+</body>
+
+</html>
